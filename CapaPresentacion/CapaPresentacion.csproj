@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A43737A-8807-4465-94BA-B0A8DA3A4915}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.102.2.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.102.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XLParser, Version=1.5.2.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\XLParser.1.5.2\lib\net461\XLParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="vtnCelular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnCelular.Designer.cs">
+      <DependentUpon>vtnCelular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnCliente.Designer.cs">
+      <DependentUpon>vtnCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnLogin.Designer.cs">
+      <DependentUpon>vtnLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnMenu.Designer.cs">
+      <DependentUpon>vtnMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vtnRecuperarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnRecuperarClave.Designer.cs">
+      <DependentUpon>vtnRecuperarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnReparacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnReparacion.Designer.cs">
+      <DependentUpon>vtnReparacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnRepuesto.Designer.cs">
+      <DependentUpon>vtnRepuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnServicio.Designer.cs">
+      <DependentUpon>vtnServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnTecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnTecnico.Designer.cs">
+      <DependentUpon>vtnTecnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnUsuario.Designer.cs">
+      <DependentUpon>vtnUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnVerAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnVerAutor.Designer.cs">
+      <DependentUpon>vtnVerAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnVerDetalleReparacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnVerDetalleReparacion.Designer.cs">
+      <DependentUpon>vtnVerDetalleReparacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vtnVerPrograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vtnVerPrograma.Designer.cs">
+      <DependentUpon>vtnVerPrograma.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="vtnCelular.resx">
+      <DependentUpon>vtnCelular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnCliente.resx">
+      <DependentUpon>vtnCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnLogin.resx">
+      <DependentUpon>vtnLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnMenu.resx">
+      <DependentUpon>vtnMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="vtnRecuperarClave.resx">
+      <DependentUpon>vtnRecuperarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnReparacion.resx">
+      <DependentUpon>vtnReparacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnRepuesto.resx">
+      <DependentUpon>vtnRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnServicio.resx">
+      <DependentUpon>vtnServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnTecnico.resx">
+      <DependentUpon>vtnTecnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnUsuario.resx">
+      <DependentUpon>vtnUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnVerAutor.resx">
+      <DependentUpon>vtnVerAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnVerDetalleReparacion.resx">
+      <DependentUpon>vtnVerDetalleReparacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vtnVerPrograma.resx">
+      <DependentUpon>vtnVerPrograma.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repuesto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\informacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\servicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\celular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reparacionTelefono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{3bd95a29-482b-47ba-a790-d278b8cfcc5f}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocios\CapaNegocios.csproj">
+      <Project>{9440bddc-6cf5-4173-b5e4-a57e9e7e55bc}</Project>
+      <Name>CapaNegocios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidad\Entidad.csproj">
+      <Project>{371d4967-48f0-447e-a790-591ab8b482dd}</Project>
+      <Name>Entidad</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tecnico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c#.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NET_Core_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sqlServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ordinateur.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mostrarcontraseña.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DonCelular.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
