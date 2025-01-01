@@ -14,13 +14,13 @@ namespace CapaPresentacion
 {
     public partial class vtnUsuario : Form
     {
-        private static int ultimoCodigoGenerado = 0;
+        private static readonly int ultimoCodigoGenerado = 0;
         public vtnUsuario()
         {
             InitializeComponent();
         }
 
-        private void vtnUsuarios_Load(object sender, EventArgs e)
+        private void VtnUsuarios_Load(object sender, EventArgs e)
         {
             cmbEstado.Items.Add(new { Valor = 1, Texto = "Activo" });
             cmbEstado.Items.Add(new { Valor = 0, Texto = "No Activo" });
@@ -100,12 +100,12 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void BtnModificar_Click(object sender, EventArgs e)
         {
             dynamic selectItemCmbRol = cmbRol.SelectedItem;
             int valorCmbRol = selectItemCmbRol.Valor;
@@ -148,7 +148,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombreCompleto.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtClave.Text))
             {
@@ -210,7 +210,7 @@ namespace CapaPresentacion
             }
             return new string(resultado);
         }
-        private void tablaUsuario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void TablaUsuario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (this.tablaUsuario.Columns[e.ColumnIndex].Name == "Estado")
             {
@@ -226,7 +226,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void tablaUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void TablaUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (tablaUsuario.Columns[e.ColumnIndex].Name == "btnSeleccionar")
             {
@@ -268,7 +268,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void tablaUsuario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void TablaUsuario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
@@ -284,7 +284,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void txtNombreCompleto_KeyPress(object sender, KeyPressEventArgs e)
+        private void TxtNombreCompleto_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {

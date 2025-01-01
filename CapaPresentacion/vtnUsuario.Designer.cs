@@ -167,7 +167,7 @@
             this.txtNombreCompleto.Name = "txtNombreCompleto";
             this.txtNombreCompleto.Size = new System.Drawing.Size(252, 27);
             this.txtNombreCompleto.TabIndex = 123;
-            this.txtNombreCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreCompleto_KeyPress);
+            this.txtNombreCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombreCompleto_KeyPress);
             // 
             // label2
             // 
@@ -285,7 +285,7 @@
             this.btnEliminar.TabIndex = 147;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -299,7 +299,7 @@
             this.btnModificar.TabIndex = 146;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // btnLimpiar
             // 
@@ -313,7 +313,7 @@
             this.btnLimpiar.TabIndex = 145;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.btnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // btnAgregar
             // 
@@ -365,9 +365,9 @@
             this.tablaUsuario.RowTemplate.Height = 28;
             this.tablaUsuario.Size = new System.Drawing.Size(943, 248);
             this.tablaUsuario.TabIndex = 143;
-            this.tablaUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaUsuario_CellContentClick);
-            this.tablaUsuario.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tablaUsuario_CellFormatting);
-            this.tablaUsuario.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.tablaUsuario_CellPainting);
+            this.tablaUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaUsuario_CellContentClick);
+            this.tablaUsuario.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.TablaUsuario_CellFormatting);
+            this.tablaUsuario.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.TablaUsuario_CellPainting);
             // 
             // btnSeleccionar
             // 
@@ -487,7 +487,7 @@
             this.Name = "vtnUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios del sistema";
-            this.Load += new System.EventHandler(this.vtnUsuarios_Load);
+            this.Load += new System.EventHandler(this.VtnUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
