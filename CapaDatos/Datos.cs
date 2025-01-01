@@ -11,20 +11,20 @@ namespace CapaDatos
 {
     public class Datos
     {
-        public SqlConnection ConexioBDD()
+        public SqlConnection ConexionBDD()
         {
             SqlConnection cn = new SqlConnection("server= DESKTOP-8CQM9OG\\SQLSEXPRESS ; database= ProyectoGrupo7 ; integrated security=true;");//Conexion BD
             cn.Open();
             return cn;
         }
         //Login
-        public List<Usuario> ingresarUsuario()
+        public List<Usuario> IngresarUsuario()
         {
             List<Usuario> listaUsuario = new List<Usuario>();
             try
             {
                 string registrar = "SELECT ID, CODIGO, NOMBRE_COMPLETO, CORREO_ELECTRONICO, CLAVE, ESTADO FROM USUARIO";
-                SqlCommand cmd = new SqlCommand(registrar, ConexioBDD());
+                SqlCommand cmd = new SqlCommand(registrar, ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
                 while (leer.Read())
@@ -46,13 +46,13 @@ namespace CapaDatos
             }
             return listaUsuario;
         }
-        public Usuario recuperarContrasena(string correoElectronico)
+        public Usuario RecuperarContrasena(string correoElectronico)
         {
             Usuario usuario = null;
             try
             {
                 string consulta = "SELECT CLAVE FROM USUARIO WHERE CORREO_ELECTRONICO = @correoElectronico";
-                SqlCommand cmd = new SqlCommand(consulta, ConexioBDD());
+                SqlCommand cmd = new SqlCommand(consulta, ConexionBDD());
                 cmd.Parameters.AddWithValue("@correoElectronico", correoElectronico);
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
@@ -80,7 +80,7 @@ namespace CapaDatos
                 StringBuilder mostrar = new StringBuilder();
                 mostrar.AppendLine("SELECT u.ID, u.CODIGO, u.NOMBRE_COMPLETO, u.CORREO_ELECTRONICO, u.CLAVE, u.ESTADO, r.ID[ID_ROL], r.DESCRIPCION FROM USUARIO u");
                 mostrar.AppendLine("inner join ROL r on r.ID = u.ID_ROL");
-                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
                 while (leer.Read())
@@ -109,7 +109,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_USUARIO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_USUARIO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre_Completo", obj.NombreCompleto);
                 cmd.Parameters.AddWithValue("CorreoElectronico", obj.CorreoElectronico);
@@ -140,7 +140,7 @@ namespace CapaDatos
             try
             {
 
-                SqlCommand cmd = new SqlCommand("PA_EDITAR_USUARIO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_EDITAR_USUARIO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre_Completo", obj.NombreCompleto);
@@ -172,7 +172,7 @@ namespace CapaDatos
             try
             {
 
-                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_USUARIO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_USUARIO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -202,7 +202,7 @@ namespace CapaDatos
                 permisos.AppendLine("inner join ROL r on r.ID = p.ID_ROL");
                 permisos.AppendLine("inner join USUARIO u on u.ID_ROL = r.ID"); 
                 permisos.AppendLine("WHERE u.ID = @id");
-                SqlCommand cmd = new SqlCommand(permisos.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(permisos.ToString(), ConexionBDD());
                 cmd.Parameters.AddWithValue("@id", idusuario);
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
@@ -229,7 +229,7 @@ namespace CapaDatos
             {
                 StringBuilder rol = new StringBuilder();
                 rol.AppendLine("SELECT ID, DESCRIPCION FROM ROL");
-                SqlCommand cmd = new SqlCommand(rol.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(rol.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
                 while (leer.Read())
@@ -255,7 +255,7 @@ namespace CapaDatos
             {
                 StringBuilder mostrar = new StringBuilder();
                 mostrar.AppendLine("SELECT ID, CODIGO, NOMBRES, APELLIDOS, CEDULA, TELEFONO, CORREO_ELECTRONICO, ESTADO FROM CLIENTE;");
-                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
                 while (leer.Read())
@@ -285,7 +285,7 @@ namespace CapaDatos
             Mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_CLIENTE", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_CLIENTE", ConexionBDD());
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre_Cliente", obj.Nombres);
                 cmd.Parameters.AddWithValue("Apellido_Cliente", obj.Apellidos);
@@ -316,7 +316,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_EDITAR_CLIENTE", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_EDITAR_CLIENTE", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre_Cliente", obj.Nombres);
@@ -347,7 +347,7 @@ namespace CapaDatos
             {
                 StringBuilder actualizar = new StringBuilder();
                 actualizar.AppendLine("UPDATE CLIENTE SET ESTADO = @ESTADO WHERE ID = @ID;");
-                SqlCommand cmd = new SqlCommand(actualizar.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(actualizar.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@ESTADO", estado);
                 cmd.Parameters.AddWithValue("@ID", idCliente);
@@ -365,7 +365,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_CLIENTE", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_CLIENTE", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -391,7 +391,7 @@ namespace CapaDatos
             {
                 StringBuilder mostrar = new StringBuilder();
                 mostrar.AppendLine("SELECT ID, CODIGO, NOMBRES, APELLIDOS, CEDULA, TELEFONO, CORREO_ELECTRONICO, ESPECIALIZACION, ANIOS_EXPERIENCIA, ESTADO FROM TECNICO;");
-                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
                 while (leer.Read())
@@ -423,7 +423,7 @@ namespace CapaDatos
             Mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_TECNICO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_TECNICO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre_Tecnico", obj.Nombres);
                 cmd.Parameters.AddWithValue("Apellido_Tecnico", obj.Apellidos);
@@ -455,7 +455,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_EDITAR_TECNICO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_EDITAR_TECNICO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre_Tecnico", obj.Nombres);
@@ -488,7 +488,7 @@ namespace CapaDatos
             {
                 StringBuilder actualizar = new StringBuilder();
                 actualizar.AppendLine("UPDATE TECNICO SET ESTADO = @ESTADO WHERE ID = @ID;");
-                SqlCommand cmd = new SqlCommand(actualizar.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(actualizar.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@ESTADO", estado);
                 cmd.Parameters.AddWithValue("@ID", idTecnico);
@@ -506,7 +506,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_TECNICO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_TECNICO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -535,7 +535,7 @@ namespace CapaDatos
                 mostrar.AppendLine("SELECT c.ID, c.CODIGO, c.MARCA, c.MODELO, c.ID_CLIENTE, cl.NOMBRES, c.ESTADO FROM CELULAR c");
                 mostrar.AppendLine("inner join CLIENTE cl on cl.ID = c.ID_CLIENTE;");
 
-                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
 
@@ -571,7 +571,7 @@ namespace CapaDatos
             Mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_CELULAR", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_CELULAR", ConexionBDD());
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Marca", obj.Marca);
                 cmd.Parameters.AddWithValue("Modelo", obj.Modelo);
@@ -599,7 +599,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_EDITAR_CELULAR", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_EDITAR_CELULAR", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Marca", obj.Marca);
@@ -628,7 +628,7 @@ namespace CapaDatos
             {
                 StringBuilder actualizar = new StringBuilder();
                 actualizar.AppendLine("UPDATE CELULAR SET ESTADO = @ESTADO WHERE ID = @ID;");
-                SqlCommand cmd = new SqlCommand(actualizar.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(actualizar.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@ESTADO", estado);
                 cmd.Parameters.AddWithValue("@ID", idCelular);
@@ -646,7 +646,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_CELULAR", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_CELULAR", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -672,7 +672,7 @@ namespace CapaDatos
             {
                 StringBuilder mostrar = new StringBuilder();
                 mostrar.AppendLine("SELECT ID, CODIGO, NOMBRE, STOCK, PRECIO, ESTADO FROM REPUESTO;");
-                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
                 while (leer.Read())
@@ -701,7 +701,7 @@ namespace CapaDatos
             Mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_REPUESTO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_REPUESTO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                 cmd.Parameters.AddWithValue("Stock", obj.Stock);
@@ -729,7 +729,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_EDITAR_REPUESTO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_EDITAR_REPUESTO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
@@ -758,7 +758,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_REPUESTO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_REPUESTO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -785,7 +785,7 @@ namespace CapaDatos
             {
                 StringBuilder mostrar = new StringBuilder();
                 mostrar.AppendLine("SELECT ID, CODIGO, NOMBRE, PRECIO, ESTADO FROM SERVICIO;");
-                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(mostrar.ToString(), ConexionBDD());
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader leer = cmd.ExecuteReader();
                 while (leer.Read())
@@ -812,7 +812,7 @@ namespace CapaDatos
             Mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_SERVICIO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_REGISTRAR_SERVICIO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                 cmd.Parameters.AddWithValue("Precio", obj.Precio);
@@ -839,7 +839,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_EDITAR_SERVICIO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_EDITAR_SERVICIO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                 cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
@@ -867,7 +867,7 @@ namespace CapaDatos
             mensaje = string.Empty;
             try
             {
-                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_SERVICIO", ConexioBDD());
+                SqlCommand cmd = new SqlCommand("PA_ELIMINAR_SERVICIO", ConexionBDD());
                 cmd.Parameters.AddWithValue("Id", obj.ID);
                 cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -893,7 +893,7 @@ namespace CapaDatos
             Mensaje = string.Empty;
             try
             {
-                using (SqlCommand cmd = new SqlCommand("PA_REGISTRAR_REPARACION", ConexioBDD()))
+                using (SqlCommand cmd = new SqlCommand("PA_REGISTRAR_REPARACION", ConexionBDD()))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -956,7 +956,7 @@ namespace CapaDatos
                 obtener.AppendLine("INNER JOIN REPUESTO RP ON RR.ID_REPUESTO = RP.ID");
                 obtener.AppendLine("WHERE R.CODIGO = @codigo");
 
-                SqlCommand cmd = new SqlCommand(obtener.ToString(), ConexioBDD());
+                SqlCommand cmd = new SqlCommand(obtener.ToString(), ConexionBDD());
                 cmd.Parameters.AddWithValue("@codigo", codigo);
                 cmd.CommandType = CommandType.Text;
 
