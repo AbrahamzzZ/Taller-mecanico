@@ -11,11 +11,11 @@ namespace CapaNegocios
         //Login
         public List<Usuario> ListarUsuarios()
         {
-            return objeto.ingresarUsuario();
+            return objeto.IngresarUsuario();
         }
         public Usuario recclaSQL(string correo)
         {
-            return objeto.recuperarContrasena(correo);
+            return objeto.RecuperarContrasena(correo);
         }
         //Permiso
         public List<Permiso> permeSQL(int idUsuario)
