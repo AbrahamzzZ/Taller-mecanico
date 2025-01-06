@@ -11,13 +11,20 @@ namespace CapaDatos
 {
     public class Datos
     {
+        /// <summary>
+        /// Metodo para la conexion
+        /// </summary>
+        /// <returns>La conexion de la base de datos</returns>
         public SqlConnection ConexionBDD()
         {
             SqlConnection cn = new SqlConnection("server= DESKTOP-8CQM9OG\\SQLSEXPRESS ; database= ProyectoGrupo7 ; integrated security=true;");//Conexion BD
             cn.Open();
             return cn;
         }
-        //Login
+        /// <summary>
+        /// Metodo que muestra un lista de todos los usuarios 
+        /// </summary>
+        /// <returns>Una lista de todos los usuarios</returns>
         public List<Usuario> IngresarUsuario()
         {
             List<Usuario> listaUsuario = new List<Usuario>();
