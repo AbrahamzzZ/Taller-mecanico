@@ -110,6 +110,8 @@ namespace CapaDatos
             }
             return listaMostrarUsuario;
         }
+        
+        //Método que permite registrar un usuario
         public int registrarUsuario(Usuario obj, out string mensaje)
         {
             int idUsuarioGenerado = 0;

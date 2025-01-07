@@ -3,20 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9A43737A-8807-4465-94BA-B0A8DA3A4915}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\herma\\source\\repos\\proyecto_grupo_7\\capapresentacion\\vtnmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9A43737A-8807-4465-94BA-B0A8DA3A4915}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\vtnmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|CapaPresentacion||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A43737A-8807-4465-94BA-B0A8DA3A4915}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\herma\\source\\repos\\proyecto_grupo_7\\capapresentacion\\vtnmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A43737A-8807-4465-94BA-B0A8DA3A4915}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\vtnmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A43737A-8807-4465-94BA-B0A8DA3A4915}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\herma\\source\\repos\\proyecto_grupo_7\\capapresentacion\\vtncelular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9A43737A-8807-4465-94BA-B0A8DA3A4915}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\vtncelular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3BD95A29-482B-47BA-A790-D278B8CFCC5F}|CapaDatos\\CapaDatos.csproj|c:\\users\\herma\\source\\repos\\proyecto_grupo_7\\capadatos\\datos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BD95A29-482B-47BA-A790-D278B8CFCC5F}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\datos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9A43737A-8807-4465-94BA-B0A8DA3A4915}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\capapresentacion\\presentacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9A43737A-8807-4465-94BA-B0A8DA3A4915}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\presentacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A43737A-8807-4465-94BA-B0A8DA3A4915}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\herma\\source\\repos\\proyecto_grupo_7\\capapresentacion\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|a54ad834-9219-4aa6-b589-607af21c3e26"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,10 +32,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
@@ -45,54 +39,49 @@
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "vtnMenu.cs",
-              "DocumentMoniker": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\vtnMenu.cs",
-              "RelativeDocumentMoniker": "CapaPresentacion\\vtnMenu.cs",
-              "ToolTip": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\vtnMenu.cs",
-              "RelativeToolTip": "CapaPresentacion\\vtnMenu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADkAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T05:35:51.389Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "vtnMenu.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\vtnMenu.cs",
-              "RelativeDocumentMoniker": "CapaPresentacion\\vtnMenu.cs",
-              "ToolTip": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\vtnMenu.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CapaPresentacion\\vtnMenu.cs [Dise\u00F1o]",
+              "Title": "CapaPresentacion",
+              "DocumentMoniker": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\CapaPresentacion.csproj",
+              "RelativeDocumentMoniker": "CapaPresentacion\\CapaPresentacion.csproj",
+              "ToolTip": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\CapaPresentacion.csproj*",
+              "RelativeToolTip": "CapaPresentacion\\CapaPresentacion.csproj*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-06T03:12:46.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Datos.cs",
+              "DocumentMoniker": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaDatos\\Datos.cs",
+              "RelativeDocumentMoniker": "CapaDatos\\Datos.cs",
+              "ToolTip": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaDatos\\Datos.cs",
+              "RelativeToolTip": "CapaDatos\\Datos.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAewEIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T05:35:49.71Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-12-07T01:40:53.355Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "vtnCelular.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\vtnCelular.cs",
-              "RelativeDocumentMoniker": "CapaPresentacion\\vtnCelular.cs",
-              "ToolTip": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\vtnCelular.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CapaPresentacion\\vtnCelular.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T05:31:06.24Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Presentacion.cs",
               "DocumentMoniker": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\Presentacion.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\Presentacion.cs",
               "ToolTip": "C:\\Users\\herma\\source\\repos\\Proyecto_Grupo_7\\CapaPresentacion\\Presentacion.cs",
               "RelativeToolTip": "CapaPresentacion\\Presentacion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T22:31:31.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T22:31:31.699Z"
             }
           ]
         }
